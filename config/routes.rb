@@ -9,4 +9,14 @@ Rails.application.routes.draw do
   root "main#index"
 
   get "about" => "about#index", as: "about"
+
+  get "sign-up" => "registration#create"
+  post "sign-up" => "registration#signup"
+
+  get "sign-in" => "sessions#new"
+  post "sign-in" => "sessions#create"
+  delete "logout" => "sessions#logout"
+
+  get "edit-password" => "passwords#edit"
+  patch "update-password" => "passwords#update"
 end
